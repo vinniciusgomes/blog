@@ -34,25 +34,11 @@
 `yarn`
 `yarn dev`
 
-
-### How to run Storybook
-
-`npm run storybook`
-<br />
-`yarn storybook`
-
-
 ### How to build
 
 `npm run build`
 <br />
 `yarn build`
-
-### How to build Storybook
-
-`npm run build-storybook`
-<br />
-`yarn build-storybook`
 
 ### How to tests
 
@@ -70,7 +56,6 @@ src
    |-- assets
    |-- helpers
    |-- mocks
-   |-- stories
    |-- styles
       |-- pages
    |-- utils
@@ -94,7 +79,6 @@ src
 components
 |-- YourComponent
    |-- YourComponent.tsx
-   |-- YourComponent.stories.tsx
    |-- YourComponent.spec.ts
    |-- interfaces.ts
    |-- styles.ts
@@ -106,7 +90,7 @@ components
 
 `./common`
 
-Here are all the project assets that will be used by the application such as global styles, images, fonts, mocks, stories, reusable functions, among others
+Here are all the project assets that will be used by the application such as global styles, images, fonts, mocks, reusable functions, among others
 
 `./components`
 
@@ -157,7 +141,6 @@ The project is already configured with:
 - Eslint
 - Prettier
 - Styled
-- Storybook
 - Husky
 
 ### Main dependecies
@@ -167,7 +150,6 @@ The project is already configured with:
 - [react](https://reactjs.org/)
 - [react-icons](https://react-icons.github.io/react-icons/)
 - [styled-components](https://styled-components.com/)
-- [storybook](https://storybook.js.org/)
 
 ### Main dev dependecies
 
