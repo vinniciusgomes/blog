@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Capacitor POC</string>
+    <string name="title_activity_main">Capacitor POC</string>
+    <string name="package_name">com.vinniciusgomes.capacitor</string>
+    <string name="custom_url_scheme">com.vinniciusgomes.capacitor</string>
+</resources>
