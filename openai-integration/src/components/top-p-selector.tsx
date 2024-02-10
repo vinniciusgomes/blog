@@ -8,6 +8,8 @@ import { Slider } from "./ui/slider";
 
 interface TopPSelectorProps {
   defaultValue: SliderProps["defaultValue"];
+  value: number[];
+  onValueChange(value: number[]): void;
 }
 
 export function TopPSelector({ defaultValue }: TopPSelectorProps) {
@@ -37,7 +39,7 @@ export function TopPSelector({ defaultValue }: TopPSelectorProps) {
         </HoverCardTrigger>
         <HoverCardContent
           align="start"
-          className="w-[260px] text-sm"
+          className="hidden md:flex w-[260px] text-sm"
           side="left"
         >
           Control diversity via nucleus sampling: 0.5 means half of all

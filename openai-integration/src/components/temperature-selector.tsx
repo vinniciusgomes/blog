@@ -8,13 +8,15 @@ import { Slider } from "./ui/slider";
 
 interface TemperatureSelectorProps {
   defaultValue: SliderProps["defaultValue"];
+  value: number[];
+  onValueChange(value: number[]): void;
 }
 
 export function TemperatureSelector({
   defaultValue,
+  value,
+  onValueChange,
 }: TemperatureSelectorProps) {
-  const [value, setValue] = React.useState(defaultValue);
-
   return (
     <div className="grid gap-2 pt-2">
       <HoverCard openDelay={200}>
@@ -29,9 +31,9 @@ export function TemperatureSelector({
             <Slider
               id="temperature"
               max={2}
-              defaultValue={value}
+              defaultValue={defaultValue}
               step={0.1}
-              onValueChange={setValue}
+              onValueChange={onValueChange}
               className="[&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
               aria-label="Temperature"
             />
@@ -39,7 +41,7 @@ export function TemperatureSelector({
         </HoverCardTrigger>
         <HoverCardContent
           align="start"
-          className="w-[260px] text-sm"
+          className="hidden md:flex w-[260px] text-sm"
           side="left"
         >
           Controls randomness: lowering results in less random completions. As

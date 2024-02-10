@@ -8,11 +8,15 @@ import { Slider } from "./ui/slider";
 
 interface MaxLengthSelectorProps {
   defaultValue: SliderProps["defaultValue"];
+  value: number[];
+  onValueChange(value: number[]): void;
 }
 
-export function MaxLengthSelector({ defaultValue }: MaxLengthSelectorProps) {
-  const [value, setValue] = React.useState(defaultValue);
-
+export function MaxLengthSelector({
+  defaultValue,
+  onValueChange,
+  value,
+}: MaxLengthSelectorProps) {
   return (
     <div className="grid gap-2 pt-2">
       <HoverCard openDelay={200}>
@@ -27,9 +31,9 @@ export function MaxLengthSelector({ defaultValue }: MaxLengthSelectorProps) {
             <Slider
               id="maxlength"
               max={4000}
-              defaultValue={value}
+              defaultValue={defaultValue}
               step={10}
-              onValueChange={setValue}
+              onValueChange={onValueChange}
               className="[&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
               aria-label="Maximum Length"
             />
@@ -37,7 +41,7 @@ export function MaxLengthSelector({ defaultValue }: MaxLengthSelectorProps) {
         </HoverCardTrigger>
         <HoverCardContent
           align="start"
-          className="w-[260px] text-sm"
+          className="hidden md:flex w-[260px] text-sm"
           side="left"
         >
           The maximum number of tokens to generate. Requests can use up to 2,048

@@ -12,24 +12,32 @@ import {
 } from "./ui/select";
 import { Label } from "./ui/label";
 
-export function ModelSelector() {
+type ModelSelectorProps = {
+  onValueChange(value: string): void;
+  defaultValue?: string;
+};
+
+export function ModelSelector({
+  onValueChange,
+  defaultValue,
+}: ModelSelectorProps) {
   return (
     <div className="grid gap-2">
       <div className="flex items-center justify-between">
-        <Label htmlFor="temperature">Model</Label>
+        <Label htmlFor="model">Model</Label>
       </div>
-      <Select>
-        <SelectTrigger>
-          <SelectValue placeholder="Select a fruit" />
+      <Select defaultValue={defaultValue} onValueChange={onValueChange}>
+        <SelectTrigger id="model">
+          <SelectValue placeholder="Select a GPT model" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectLabel>Fruits</SelectLabel>
-            <SelectItem value="apple">Apple</SelectItem>
-            <SelectItem value="banana">Banana</SelectItem>
-            <SelectItem value="blueberry">Blueberry</SelectItem>
-            <SelectItem value="grapes">Grapes</SelectItem>
-            <SelectItem value="pineapple">Pineapple</SelectItem>
+            <SelectLabel>CHAT</SelectLabel>
+            <SelectItem value="gpt-3.5-turbo">gpt-3.5-turbo</SelectItem>
+            <SelectItem value="gpt-3.5-turbo-16k">gpt-3.5-turbo-16k</SelectItem>
+            <SelectItem value="gpt-3.5-turbo-0125">
+              gpt-3.5-turbo-0125
+            </SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
